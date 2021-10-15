@@ -26,13 +26,12 @@ class _FacebookAppState extends State<FacebookApp> {
             children: [
               ElevatedButton(
                   onPressed: () async {
-                    final result = await FacebookAuth.instance
+                    final result = await FacebookAuth.i
                         .login(permissions: ["public_profile", "email"]);
 
                     if (result.status == LoginStatus.success) {
-                      final requestData =
-                          await FacebookAuth.instance.getUserData(
-                        fields: "email",
+                      final requestData = await FacebookAuth.i.getUserData(
+                        fields: "email, name",
                       );
 
                       setState(() {
@@ -43,7 +42,7 @@ class _FacebookAppState extends State<FacebookApp> {
                   child: Text('Log In')),
               ElevatedButton(
                   onPressed: () async {
-                    await FacebookAuth.instance.logOut();
+                    await FacebookAuth.i.logOut();
                     setState(() {
                       _userData = null;
                     });
