@@ -20,6 +20,7 @@ class _AddPetsState extends State<AddPets> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+        padding: const EdgeInsets.only(top: 10.0, bottom: 20.0),
         itemCount: petList.length,
         itemBuilder: (BuildContext context, int index) {
           return buildPetCard(context, index);
@@ -28,6 +29,9 @@ class _AddPetsState extends State<AddPets> {
 
   Widget buildPetCard(BuildContext context, int index) {
     return Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
         margin: const EdgeInsets.only(
             top: 20.0, bottom: 10.0, left: 30.0, right: 30.0),
         child: Padding(
@@ -39,14 +43,64 @@ class _AddPetsState extends State<AddPets> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Pet Name: ${petList[index].petName}"),
-                          Text("Pet Type: ${petList[index].petType}"),
-                          Text("Pet Type: ${petList[index].petBreed}"),
-                          Text("Pet Age: ${petList[index].petAge.toString()}")
-                        ]),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 16.0,
+                      ),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            RichText(
+                                text: TextSpan(
+                                    text: "Pet Name:  ",
+                                    style: const TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                    children: [
+                                  TextSpan(
+                                    text: petList[index].petName,
+                                    style: DefaultTextStyle.of(context).style,
+                                  )
+                                ])),
+                            RichText(
+                                text: TextSpan(
+                                    text: "Pet Type:  ",
+                                    style: const TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                    children: [
+                                  TextSpan(
+                                    text: petList[index].petType,
+                                    style: DefaultTextStyle.of(context).style,
+                                  )
+                                ])),
+                            RichText(
+                                text: TextSpan(
+                                    text: "Pet Breed:  ",
+                                    style: const TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                    children: [
+                                  TextSpan(
+                                    text: petList[index].petBreed,
+                                    style: DefaultTextStyle.of(context).style,
+                                  )
+                                ])),
+                            RichText(
+                                text: TextSpan(
+                                    text: "Pet Age:  ",
+                                    style: const TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                    children: [
+                                  TextSpan(
+                                    text: petList[index].petAge.toString(),
+                                    style: DefaultTextStyle.of(context).style,
+                                  )
+                                ])),
+                          ]),
+                    ),
                     ButtonBar(
                       buttonPadding: EdgeInsets.zero,
                       alignment: MainAxisAlignment.start,
