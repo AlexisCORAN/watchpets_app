@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:watchpets/src/screens/login_screen.dart';
 import 'package:watchpets/src/screens/pets_screen.dart';
 import 'package:watchpets/src/screens/profile_screen.dart';
@@ -31,19 +30,16 @@ class _FullNavigatorState extends State<FullNavigator> {
           ),
           ListTile(
             leading: const Icon(Icons.account_circle),
-            title: const Text('Profile'),
+            title: const Text("Profile"),
             onTap: () {
               final route = MaterialPageRoute(
-                builder: (BuildContext context) {
-                  return const ProfileScreen();
-                },
-              );
+                  builder: (BuildContext context) => const ProfileScreen());
               Navigator.push(context, route);
             },
           ),
           ListTile(
             leading: const Icon(Icons.pets),
-            title: const Text('My Pets'),
+            title: const Text("My Pets"),
             onTap: () {
               final route = MaterialPageRoute(
                   builder: (BuildContext context) => const MyPet());
