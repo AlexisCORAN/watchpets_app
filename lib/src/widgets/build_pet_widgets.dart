@@ -2,24 +2,27 @@ import 'package:flutter/material.dart';
 
 Widget buildRichText(
     BuildContext context, int index, String textProperty, String addProperty) {
-  return RichText(
-      text: TextSpan(
-          text: textProperty,
-          style:
-              const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-          children: [
-        TextSpan(
-          text: addProperty,
-          style: DefaultTextStyle.of(context).style,
-        )
-      ]));
+  return Padding(
+    padding: const EdgeInsets.all(3.0),
+    child: RichText(
+        text: TextSpan(
+            text: textProperty,
+            style: const TextStyle(
+                color: Colors.black, fontWeight: FontWeight.bold),
+            children: [
+          TextSpan(
+            text: addProperty,
+            style: DefaultTextStyle.of(context).style,
+          )
+        ])),
+  );
 }
 
 Widget buildPetCard(BuildContext context, int index, String propertyName,
     String propertyType, String propertyBreed, String propertyAge) {
   return Card(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(10),
       ),
       margin: const EdgeInsets.only(
           top: 20.0, bottom: 10.0, left: 30.0, right: 30.0),
@@ -33,22 +36,27 @@ Widget buildPetCard(BuildContext context, int index, String propertyName,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(
-                      left: 16.0,
+                    padding: EdgeInsets.zero,
+                    child: ListTile(
+                      title: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          propertyName,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      subtitle: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            buildRichText(
+                                context, index, "Pet Type:  ", propertyType),
+                            buildRichText(
+                                context, index, "Pet Breed:  ", propertyBreed),
+                            buildRichText(
+                                context, index, "Pet Age:  ", propertyAge),
+                          ]),
                     ),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          buildRichText(
-                              context, index, "Pet Name:  ", propertyName),
-                          buildRichText(
-                              context, index, "Pet Type:  ", propertyType),
-                          buildRichText(
-                              context, index, "Pet Breed:  ", propertyBreed),
-                          buildRichText(
-                              context, index, "Pet Age:  ", propertyAge),
-                        ]),
                   ),
                   ButtonBar(
                     buttonPadding: EdgeInsets.zero,
