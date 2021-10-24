@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:watchpets/src/widgets/add_pets.dart';
+import 'package:watchpets/src/widgets/list_view_pets.dart';
 
 class MyPet extends StatefulWidget {
   const MyPet({Key? key}) : super(key: key);
@@ -15,9 +15,11 @@ class _MyPetState extends State<MyPet> {
         title: const Text('My Pets'),
         backgroundColor: Colors.red[700],
       ),
-      body: const AddPets(),
+      body: const FullListView(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          setState(() {});
+        },
         child: const Icon(Icons.add),
         backgroundColor: Colors.red[300],
       ),
