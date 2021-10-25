@@ -10,6 +10,7 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
+    var namePosition = MediaQuery.of(context).size.height / 3;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profile'),

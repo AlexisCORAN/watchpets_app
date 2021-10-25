@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:watchpets/src/screens/login_screen.dart';
-import 'package:watchpets/src/screens/pets_screen.dart';
-import 'package:watchpets/src/screens/profile_screen.dart';
 
 class FullNavigator extends StatefulWidget {
   const FullNavigator({Key? key}) : super(key: key);
@@ -32,27 +30,22 @@ class _FullNavigatorState extends State<FullNavigator> {
             leading: const Icon(Icons.account_circle),
             title: const Text("Profile"),
             onTap: () {
-              final route = MaterialPageRoute(
-                  builder: (BuildContext context) => const ProfileScreen());
-              Navigator.push(context, route);
+              Navigator.pushNamed(context, "/profile");
             },
           ),
           ListTile(
             leading: const Icon(Icons.pets),
             title: const Text("My Pets"),
             onTap: () {
-              final route = MaterialPageRoute(
-                  builder: (BuildContext context) => const MyPet());
-              Navigator.push(context, route);
+              Navigator.pushNamed(context, "/pets");
             },
           ),
           ListTile(
             leading: const Icon(Icons.logout),
             title: const Text('Log out'),
             onTap: () {
-              final route = MaterialPageRoute(
-                  builder: (BuildContext context) => const LoginScreen());
-              Navigator.of(context).pushAndRemoveUntil(route, (route) => false);
+              Navigator.of(context)
+                  .pushNamedAndRemoveUntil("/", (route) => false);
             },
           ),
         ],

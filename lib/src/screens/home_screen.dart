@@ -6,21 +6,17 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'WatchPets',
-      home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.red[700],
-            title: const Text('WatchPets'),
-          ),
-          body: const Center(child: Text('Home')),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {},
-            child: const Icon(Icons.add),
-            backgroundColor: Colors.red[300],
-          ),
-          drawer: const FullNavigator()),
-    );
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.red[700],
+          title: const Text('WatchPets'),
+        ),
+        body: const Center(child: Text('Home')),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
+          backgroundColor: Colors.red[300],
+        ),
+        drawer: const FullNavigator());
   }
 }

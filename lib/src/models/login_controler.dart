@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:watchpets/src/models/user_model.dart';
+import 'package:watchpets/src/models/user.dart';
 
 class LoginController with ChangeNotifier {
   bool _checking = false;

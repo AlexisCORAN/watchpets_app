@@ -12,26 +12,38 @@ class FullListView extends StatefulWidget {
 
 class _FullListViewState extends State<FullListView> {
   final List<Pet> petList = [
-    Pet("Boby", "Cat", "Persian Cat", 9),
-    Pet("Mayo", "Dog", "Persian Cat", 2),
-    Pet("Captain", "Bird", "Persian Cat", 6),
-    Pet("Rockstar", "Rabbits", "Persian Cat", 5),
-    Pet("Meteoro", "Fish", "Persian Cat", 3)
+    Pet(petName: "Boby", petType: "Cat", petBreed: "Persian Cat", petAge: 9),
+    Pet(petName: "Mayo", petType: "Dog", petBreed: "Persian Cat", petAge: 2),
+    Pet(
+        petName: "Captain",
+        petType: "Bird",
+        petBreed: "Persian Cat",
+        petAge: 6),
+    Pet(
+        petName: "Rockstar",
+        petType: "Cat",
+        petBreed: "Persian Cat",
+        petAge: 5),
+    Pet(petName: "Meteoro", petType: "Cat", petBreed: "Persian Cat", petAge: 3),
   ];
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        padding: const EdgeInsets.only(top: 10.0, bottom: 20.0),
+        padding: const EdgeInsets.only(left: 30.0, right: 30.0, top: 30.0),
         itemCount: petList.length,
         itemBuilder: (BuildContext context, int index) {
-          return buildPetCard(
-              context,
-              index,
-              petList[index].petName,
-              petList[index].petType,
-              petList[index].petBreed,
-              petList[index].petAge.toString());
+          return PetCardWidget(
+              propertyName: petList[index].petName,
+              propertyType: petList[index].petType,
+              propertyBreed: petList[index].petBreed,
+              propertyAge: petList[index].petAge.toString());
         });
   }
 }
+
+/**BuildPetCard(
+              petList[index].petName,petList[index].petBreed
+              petList[index].petType,
+              ,
+              petList[index].petAge.toString());*/

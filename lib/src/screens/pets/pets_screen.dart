@@ -18,7 +18,7 @@ class _MyPetState extends State<MyPet> {
       body: const FullListView(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {});
+          Navigator.pushNamed(context, "/addpets");
         },
         child: const Icon(Icons.add),
         backgroundColor: Colors.red[300],

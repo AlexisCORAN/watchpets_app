@@ -5,7 +5,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:watchpets/src/models/login_controler.dart';
-import 'package:watchpets/src/screens/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -109,13 +108,13 @@ class _LoginScreenState extends State<LoginScreen> {
             child: ElevatedButton(
           child: const Text('Login'),
           onPressed: () {
-            final route =
-                MaterialPageRoute(builder: (context) => const HomeScreen());
             if (_userData != null) {
-              Navigator.of(context).pushAndRemoveUntil(route, (route) => false);
+              Navigator.of(context)
+                  .pushNamedAndRemoveUntil("/home", (route) => false);
             } else {
               _login();
-              Navigator.of(context).pushAndRemoveUntil(route, (route) => false);
+              Navigator.of(context)
+                  .pushNamedAndRemoveUntil("/home", (route) => false);
             }
           },
         )),
