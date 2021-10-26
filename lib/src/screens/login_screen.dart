@@ -1,10 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:watchpets/src/models/login_controler.dart';
 import 'package:watchpets/src/widgets/icon.dart';
 import 'package:watchpets/src/widgets/logo.dart';
 
@@ -22,81 +21,16 @@ String prettyPrint(Map json) {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  Map<String, dynamic>? _userData;
-  AccessToken? _accessToken;
-  bool _checking = true;
+  Future<UserCredential?> signInWithFacebook() async {
+    final LoginResult loginResult = await FacebookAuth.instance.login();
 
-  @override
-  void initState() {
-    super.initState();
-    _checkIfIsLogged();
-  }
-
-  Future<void> _checkIfIsLogged() async {
-    final AccessToken? accessToken = await FacebookAuth.instance.accessToken;
-    setState(() {
-      _checking = false;
-    });
-    if (accessToken != null) {
-      print("is Logged:::: ${prettyPrint(accessToken.toJson())}");
-      final userData = await FacebookAuth.instance.getUserData();
-      print(userData);
-      String nameAccount = userData['name'];
-      print(nameAccount);
-      _accessToken = accessToken;
-      setState(() {
-        _userData = userData;
-      });
+    if (loginResult.status == LoginStatus.success) {
+      final OAuthCredential facebookAuthCredential =
+          FacebookAuthProvider.credential(loginResult.accessToken!.token);
+      return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
     }
+    return null;
   }
-
-  void _printCredentials() {
-    print(
-      prettyPrint(_accessToken!.toJson()),
-    );
-  }
-
-  Future<void> _login() async {
-    final LoginResult result = await FacebookAuth.instance.login();
-
-    if (result.status == LoginStatus.success) {
-      _accessToken = result.accessToken;
-      _printCredentials();
-      final userData = await FacebookAuth.instance.getUserData();
-      _userData = userData;
-    }
-
-    setState(() {
-      _checking = false;
-    });
-  }
-
-  Future<void> _logOut() async {
-    await FacebookAuth.instance.logOut();
-    _accessToken = null;
-    _userData = null;
-    setState(() {});
-  }
-
-/** 
-  loginPage() {
-    return Consumer<LoginController>(builder: (context, model, child) {
-      if (model.userData != null) {
-
-        return Center(
-          alreadyLoggedInScreen(model);
-        );
-      } else {
-        return notLoggedInScreen(model);
-      }
-
-    });
-  }
-
-  alreadyLoggedInScreen(LoginController model) {
-
-  }
-  */
 
   @override
   Widget build(BuildContext context) {
@@ -130,11 +64,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: ElevatedButton(
                     child: const Text('Login'),
                     onPressed: () {
-                      if (_userData != null) {
+                      if (signInWithFacebook() != null) {
                         Navigator.of(context)
                             .pushNamedAndRemoveUntil("/home", (route) => false);
                       } else {
-                        _login();
                         Navigator.of(context)
                             .pushNamedAndRemoveUntil("/home", (route) => false);
                       }

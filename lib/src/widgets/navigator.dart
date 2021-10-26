@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:watchpets/src/screens/login_screen.dart';
 
 class FullNavigator extends StatefulWidget {
   const FullNavigator({Key? key}) : super(key: key);

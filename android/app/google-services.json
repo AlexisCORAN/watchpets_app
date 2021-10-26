@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "834376664397",
+    "project_id": "proyect-demo-401db",
+    "storage_bucket": "proyect-demo-401db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834376664397:android:0d2b88fa02a6c31655a304",
+        "android_client_info": {
+          "package_name": "pe.itland.watchpets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "834376664397-vehk769f7l5i2l8dhc0crm070vimnu21.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDW7EjbNoPNO8Lk2pJvUJr4P_VnvJsR8dw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "834376664397-vehk769f7l5i2l8dhc0crm070vimnu21.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
