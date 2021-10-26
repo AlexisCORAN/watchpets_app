@@ -16,8 +16,8 @@ class _FullNavigatorState extends State<FullNavigator> {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.red[700],
+            decoration: const BoxDecoration(
+              color: Colors.green,
             ),
             accountName: const Text('Tyrone Backyardigans'),
             accountEmail: null,

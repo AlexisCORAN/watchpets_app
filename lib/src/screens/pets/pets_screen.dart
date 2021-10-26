@@ -14,7 +14,7 @@ class _MyPetState extends State<MyPet> {
       appBar: AppBar(
         title: const Text('My Pets'),
       ),
-      body: const FullListView(),
+      body: Container(color: Colors.blueGrey[900], child: const FullListView()),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushNamed(context, "/addpets");

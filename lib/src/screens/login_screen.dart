@@ -5,6 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:watchpets/src/models/login_controler.dart';
+import 'package:watchpets/src/widgets/icon.dart';
+import 'package:watchpets/src/widgets/logo.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -98,93 +100,50 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+    final double greenSize = size.width * 0.80;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login Page'),
-      ),
-      body: Center(
-          child: ElevatedButton(
-        child: const Text('Login'),
-        onPressed: () {
-          if (_userData != null) {
-            Navigator.of(context)
-                .pushNamedAndRemoveUntil("/home", (route) => false);
-          } else {
-            _login();
-            Navigator.of(context)
-                .pushNamedAndRemoveUntil("/home", (route) => false);
-          }
-        },
-      )),
-    );
-  }
-}
-
-
-
-/*
-import 'package:flutter/material.dart';
-
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'WatchPets',
-      home: MyStatefulWidget(),
-    );
-  }
-}
-
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
-
-  @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
-}
-
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            Container(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: const Text(
-                'Oeschinen Lake Campground',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
+      body: Container(
+        width: size.width,
+        height: size.height,
+        color: Colors.blueGrey[900],
+        child: Center(
+          child: Stack(
+            alignment: AlignmentDirectional.center,
+            children: [
+              Positioned(
+                left: greenSize * 0.12,
+                right: greenSize * 0.12,
+                top: greenSize * 0.1,
+                child: const Logo(),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: const Text(
-                'Oeschinen Lake Campground',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
+              Positioned(
+                left: greenSize * 0.40,
+                right: greenSize * 0.40,
+                top: greenSize * 0.78,
+                child: const IconLogo(),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: const Text(
-                'Oeschinen Lake Campground',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ],
+              Positioned(
+                  left: greenSize * 0.30,
+                  right: greenSize * 0.30,
+                  top: greenSize * 1.6,
+                  child: ElevatedButton(
+                    child: const Text('Login'),
+                    onPressed: () {
+                      if (_userData != null) {
+                        Navigator.of(context)
+                            .pushNamedAndRemoveUntil("/home", (route) => false);
+                      } else {
+                        _login();
+                        Navigator.of(context)
+                            .pushNamedAndRemoveUntil("/home", (route) => false);
+                      }
+                    },
+                  ))
+            ],
+          ),
         ),
       ),
     );
   }
 }
-*/

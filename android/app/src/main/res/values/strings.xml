@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="app_name"> facebook_login_demo </string>
+    <string name="app_name"> WatchPets </string>
     <string name="facebook_app_id">605867787266254</string>
     <string name="fb_login_protocol_scheme">fb605867787266254</string>
 </resources>

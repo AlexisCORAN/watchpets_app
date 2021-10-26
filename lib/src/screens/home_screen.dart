@@ -10,7 +10,9 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('WatchPets'),
         ),
-        body: const Center(child: Text('Home')),
+        body: Container(
+            color: Colors.blueGrey[900],
+            child: const Center(child: Text('Home'))),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           child: const Icon(Icons.add),

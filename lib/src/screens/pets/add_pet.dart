@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:watchpets/src/widgets/textfield_widget.dart';
 
 class AddPet extends StatefulWidget {
   const AddPet({Key? key}) : super(key: key);
@@ -38,9 +37,6 @@ class _AddPetState extends State<AddPet> {
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.red),
                       ),
-                      /**border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red),
-                  ),*/
                       labelText: "Pet Name",
                     ),
                     maxLength: 20,

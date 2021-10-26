@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: "WatchPets",
         theme: ThemeData(
-          appBarTheme: AppBarTheme(backgroundColor: Colors.red[700]),
-          floatingActionButtonTheme:
-              FloatingActionButtonThemeData(backgroundColor: Colors.red[400]),
+          /// appBarTheme: AppBarTheme(backgroundColor: Colors.red[700]),
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.green)
+              .copyWith(secondary: Colors.greenAccent[400]),
         ),
         initialRoute: "/",
         routes: {
