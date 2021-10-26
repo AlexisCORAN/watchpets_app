@@ -31,12 +31,7 @@ class _AddPetState extends State<AddPet> {
                     keyboardType: TextInputType.name,
                     autofocus: true,
                     decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.red),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.red),
-                      ),
+                      enabledBorder: OutlineInputBorder(),
                       labelText: "Pet Name",
                     ),
                     maxLength: 20,
