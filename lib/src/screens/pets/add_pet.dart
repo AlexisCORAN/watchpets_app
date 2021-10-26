@@ -15,75 +15,92 @@ class _AddPetState extends State<AddPet> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text("Add Pet"),
       ),
       body: Container(
         margin: const EdgeInsets.all(30.0),
         child: Center(
           child: SingleChildScrollView(
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              const TextField(
-                keyboardType: TextInputType.name,
-                autofocus: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: "Pet Name",
-                ),
-                maxLength: 20,
-                maxLines: 1,
-              ),
-              const TextField(
-                keyboardType: TextInputType.name,
-                autofocus: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: "Pet Type",
-                ),
-                maxLength: 20,
-                maxLines: 1,
-              ),
-              const TextField(
-                keyboardType: TextInputType.name,
-                autofocus: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: "Pet Breed",
-                ),
-                maxLength: 20,
-                maxLines: 1,
-              ),
-              const TextField(
-                keyboardType: TextInputType.number,
-                autofocus: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: "Pet Age",
-                ),
-                maxLength: 3,
-                maxLines: 1,
-              ),
-              Row(
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text("Male"),
-                  Radio(value: 1, groupValue: sex, onChanged: (value) {}),
-                  const Text("Female"),
-                  Radio(
-                    value: 0,
-                    groupValue: sex,
-                    onChanged: (value) {},
+                  Container(
+                      margin: const EdgeInsets.all(16.0),
+                      child: const CircleAvatar()),
+                  const TextField(
+                    keyboardType: TextInputType.name,
+                    autofocus: true,
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red),
+                      ),
+                      /**border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.red),
+                  ),*/
+                      labelText: "Pet Name",
+                    ),
+                    maxLength: 20,
+                    maxLines: 1,
+                  ),
+                  const TextField(
+                    keyboardType: TextInputType.name,
+                    autofocus: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: "Pet Type",
+                    ),
+                    maxLength: 20,
+                    maxLines: 1,
+                  ),
+                  const TextField(
+                    keyboardType: TextInputType.name,
+                    autofocus: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: "Pet Breed",
+                    ),
+                    maxLength: 20,
+                    maxLines: 1,
+                  ),
+                  const TextField(
+                    keyboardType: TextInputType.number,
+                    autofocus: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: "Pet Age",
+                    ),
+                    maxLength: 3,
+                    maxLines: 1,
+                  ),
+                  Row(
+                    children: [
+                      const Text("Male"),
+                      Radio(value: 1, groupValue: sex, onChanged: (value) {}),
+                      const Text("Female"),
+                      Radio(
+                        value: 0,
+                        groupValue: sex,
+                        onChanged: (value) {},
+                      )
+                    ],
+                  ),
+                  ButtonBar(
+                    buttonPadding: const EdgeInsets.all(16.0),
+                    alignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text("Cancel")),
+                      TextButton(onPressed: () {}, child: const Text("Save")),
+                    ],
                   )
-                ],
-              ),
-              ButtonBar(
-                buttonPadding: EdgeInsets.zero,
-                alignment: MainAxisAlignment.spaceAround,
-                children: [
-                  TextButton(onPressed: () {}, child: const Text("Cancel")),
-                  TextButton(onPressed: () {}, child: const Text("Save")),
-                ],
-              )
-            ]),
+                ]),
           ),
         ),
       ),

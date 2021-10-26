@@ -98,27 +98,24 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Login Page'),
-        ),
-        body: Center(
-            child: ElevatedButton(
-          child: const Text('Login'),
-          onPressed: () {
-            if (_userData != null) {
-              Navigator.of(context)
-                  .pushNamedAndRemoveUntil("/home", (route) => false);
-            } else {
-              _login();
-              Navigator.of(context)
-                  .pushNamedAndRemoveUntil("/home", (route) => false);
-            }
-          },
-        )),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Login Page'),
       ),
+      body: Center(
+          child: ElevatedButton(
+        child: const Text('Login'),
+        onPressed: () {
+          if (_userData != null) {
+            Navigator.of(context)
+                .pushNamedAndRemoveUntil("/home", (route) => false);
+          } else {
+            _login();
+            Navigator.of(context)
+                .pushNamedAndRemoveUntil("/home", (route) => false);
+          }
+        },
+      )),
     );
   }
 }

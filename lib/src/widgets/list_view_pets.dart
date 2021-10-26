@@ -41,9 +41,3 @@ class _FullListViewState extends State<FullListView> {
         });
   }
 }
-
-/**BuildPetCard(
-              petList[index].petName,petList[index].petBreed
-              petList[index].petType,
-              ,
-              petList[index].petAge.toString());*/

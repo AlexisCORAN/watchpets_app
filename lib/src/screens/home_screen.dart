@@ -8,14 +8,12 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red[700],
           title: const Text('WatchPets'),
         ),
         body: const Center(child: Text('Home')),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           child: const Icon(Icons.add),
-          backgroundColor: Colors.red[300],
         ),
         drawer: const FullNavigator());
   }

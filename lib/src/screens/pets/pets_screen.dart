@@ -13,7 +13,6 @@ class _MyPetState extends State<MyPet> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('My Pets'),
-        backgroundColor: Colors.red[700],
       ),
       body: const FullListView(),
       floatingActionButton: FloatingActionButton(
@@ -21,7 +20,6 @@ class _MyPetState extends State<MyPet> {
           Navigator.pushNamed(context, "/addpets");
         },
         child: const Icon(Icons.add),
-        backgroundColor: Colors.red[300],
       ),
     );
   }

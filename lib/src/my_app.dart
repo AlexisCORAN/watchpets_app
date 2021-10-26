@@ -15,6 +15,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "WatchPets",
+        theme: ThemeData(
+          appBarTheme: AppBarTheme(backgroundColor: Colors.red[700]),
+          floatingActionButtonTheme:
+              FloatingActionButtonThemeData(backgroundColor: Colors.red[400]),
+        ),
         initialRoute: "/",
         routes: {
           "/": (BuildContext context) => const LoginScreen(),
