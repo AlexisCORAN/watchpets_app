@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
-import 'package:watchpets/src/screens/alert/confirm_time.dart';
 
-class LocationApp extends StatefulWidget {
-  const LocationApp({Key? key}) : super(key: key);
+class LocationUser extends StatefulWidget {
+  const LocationUser({Key? key}) : super(key: key);
 
   @override
-  _LocationAppState createState() => _LocationAppState();
+  _LocationUserState createState() => _LocationUserState();
 }
 
-class _LocationAppState extends State<LocationApp> {
-  var locationMessage = "";
-
+class _LocationUserState extends State<LocationUser> {
+  var locationMessage = '';
   void getCurrentLocation() async {
-    var position = await Geolocator()
-        .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-    var lastPosition = await Geolocator().getLastKnownPosition();
-    print(lastPosition);
-    var lat = position.latitude;
-    var long = position.longitude;
+    var location = await Location().getLocation();
+    var lat = location.latitude;
+    var long = location.longitude;
     print("$lat, $long");
 
     setState(() {
@@ -38,12 +33,11 @@ class _LocationAppState extends State<LocationApp> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: const Text('Location Services'),
+          title: const Text('Get Location'),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const ConfirmTime()));
+            Navigator.pushNamed(context, "/timealert");
           },
           child: const Icon(Icons.arrow_forward),
           backgroundColor: const Color(0xff4cc443),

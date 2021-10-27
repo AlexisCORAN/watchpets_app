@@ -1,6 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:watchpets/src/models/login_controler.dart';
+import 'package:watchpets/src/screens/alert/confirm_time_alert.dart';
+import 'package:watchpets/src/screens/alert/location_alert.dart';
+import 'package:watchpets/src/screens/alert/select_pet.dart';
+import 'package:watchpets/src/screens/alert/succes_alert.dart';
+import 'package:watchpets/src/screens/alert/summary_alert.dart';
 import 'package:watchpets/src/screens/login_screen.dart';
 import 'package:watchpets/src/screens/pets/add_pet.dart';
 import 'screens/home_screen.dart';
@@ -34,6 +39,11 @@ class MyApp extends StatelessWidget {
             "/profile": (BuildContext context) => const ProfileScreen(),
             "/pets": (BuildContext context) => const MyPet(),
             "/addpets": (BuildContext context) => const AddPet(),
+            "/selectpet": (BuildContext context) => const SelectPet(),
+            "/locationuser": (BuildContext context) => const LocationUser(),
+            "/timealert": (BuildContext context) => const ConfirmTimeAlert(),
+            "/summaryalert": (BuildContext context) => const SummaryAlert(),
+            "/successalert": (BuildContext context) => const SuccessAlert(),
           }),
     );
   }

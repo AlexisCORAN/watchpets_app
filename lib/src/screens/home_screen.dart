@@ -14,7 +14,9 @@ class HomeScreen extends StatelessWidget {
             color: Colors.blueGrey[900],
             child: const Center(child: Text('Home'))),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, "/selectpet");
+          },
           child: const Icon(Icons.add),
         ),
         drawer: const FullNavigator());
