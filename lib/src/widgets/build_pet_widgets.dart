@@ -48,6 +48,8 @@ class PetCardWidget extends StatefulWidget {
 }
 
 class _PetCardWidgetState extends State<PetCardWidget> {
+  bool? check = false;
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -61,17 +63,32 @@ class _PetCardWidgetState extends State<PetCardWidget> {
               children: [
                 Expanded(
                     child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
                       padding: EdgeInsets.zero,
                       child: ListTile(
                         title: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            widget.propertyName,
-                            textAlign: TextAlign.center,
+                          padding: EdgeInsets.zero,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Checkbox(
+                                  value: check,
+                                  onChanged: (bool? value) {
+                                    setState(() {
+                                      check = value;
+                                    });
+                                  }),
+                              Expanded(
+                                child: Text(
+                                  widget.propertyName,
+                                  textAlign: TextAlign.center,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         subtitle: Column(
@@ -90,15 +107,6 @@ class _PetCardWidgetState extends State<PetCardWidget> {
                             ]),
                       ),
                     ),
-                    ButtonBar(
-                      buttonPadding: EdgeInsets.zero,
-                      alignment: MainAxisAlignment.start,
-                      children: [
-                        TextButton(onPressed: () {}, child: const Text('Edit')),
-                        TextButton(
-                            onPressed: () {}, child: const Text('Delete')),
-                      ],
-                    )
                   ],
                 )),
                 Expanded(

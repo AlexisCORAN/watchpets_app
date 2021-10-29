@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:watchpets/src/models/pets.dart';
+import 'package:watchpets/src/providers/pet_provider.dart';
 
 import 'build_pet_widgets.dart';
 

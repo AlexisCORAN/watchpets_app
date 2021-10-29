@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watchpets/src/widgets/list_view_pets.dart';
 
 class SelectPet extends StatefulWidget {
   const SelectPet({Key? key}) : super(key: key);
@@ -15,11 +16,11 @@ class _SelectPetState extends State<SelectPet> {
       appBar: AppBar(title: const Text('Send Alert')),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/location');
+          Navigator.pushNamed(context, '/locationuser');
         },
         child: const Icon(Icons.arrow_forward),
       ),
-      body: const Center(child: Text('Select Pet')),
+      body: const FullListView(),
     );
   }
 }

@@ -24,9 +24,6 @@ class _AddPetState extends State<AddPet> {
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
-                      margin: const EdgeInsets.all(16.0),
-                      child: const CircleAvatar()),
                   const TextField(
                     keyboardType: TextInputType.name,
                     autofocus: true,

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/src/provider.dart';
+import 'package:watchpets/src/providers/auth_provider.dart';
+import 'package:watchpets/src/widgets/listt_tile_alert.dart';
 import 'package:watchpets/src/widgets/navigator.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,15 +13,13 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('WatchPets'),
         ),
-        body: Container(
-            color: Colors.blueGrey[900],
-            child: const Center(child: Text('Home'))),
+        body: const FullListTile(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.pushNamed(context, "/selectpet");
           },
           child: const Icon(Icons.add),
         ),
-        drawer: const FullNavigator());
+        drawer: FullNavigator());
   }
 }

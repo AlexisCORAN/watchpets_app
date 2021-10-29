@@ -1,7 +1,10 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/src/provider.dart';
+import 'package:watchpets/src/providers/auth_provider.dart';
 
 class FullNavigator extends StatefulWidget {
-  const FullNavigator({Key? key}) : super(key: key);
+  FullNavigator({Key? key}) : super(key: key);
 
   @override
   _FullNavigatorState createState() => _FullNavigatorState();
@@ -10,6 +13,7 @@ class FullNavigator extends StatefulWidget {
 class _FullNavigatorState extends State<FullNavigator> {
   @override
   Widget build(BuildContext context) {
+    final firebaseUser = context.read<AuthController>();
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -18,11 +22,13 @@ class _FullNavigatorState extends State<FullNavigator> {
             decoration: const BoxDecoration(
               color: Colors.blueGrey,
             ),
-            accountName: const Text('Tyrone Backyardigans'),
+            accountName: Text('${firebaseUser.currentUser!.displayName}'),
             accountEmail: null,
             currentAccountPicture: CircleAvatar(
-              backgroundColor: Colors.yellow[400],
-              child: const Text("TB"),
+              backgroundImage:
+                  NetworkImage('${firebaseUser.currentUser!.photoURL}'),
+              backgroundColor: Colors.transparent,
+              radius: 30.0,
             ),
           ),
           ListTile(
@@ -42,9 +48,11 @@ class _FullNavigatorState extends State<FullNavigator> {
           ListTile(
             leading: const Icon(Icons.logout),
             title: const Text('Log out'),
-            onTap: () {
-              Navigator.of(context)
-                  .pushNamedAndRemoveUntil("/", (route) => false);
+            onTap: () async {
+              firebaseUser.logout().whenComplete(() {
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil("/login", (route) => false);
+              });
             },
           ),
         ],

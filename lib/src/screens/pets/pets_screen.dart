@@ -1,23 +1,29 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:watchpets/src/providers/auth_provider.dart';
+import 'package:watchpets/src/providers/pet_provider.dart';
 import 'package:watchpets/src/widgets/list_view_pets.dart';
 
-class MyPet extends StatefulWidget {
-  const MyPet({Key? key}) : super(key: key);
+class MyPets extends StatefulWidget {
+  const MyPets({
+    Key? key,
+  }) : super(key: key);
   @override
-  _MyPetState createState() => _MyPetState();
+  _MyPetsState createState() => _MyPetsState();
 }
 
-class _MyPetState extends State<MyPet> {
+class _MyPetsState extends State<MyPets> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('My Pets'),
       ),
-      body: Container(color: Colors.blueGrey[900], child: const FullListView()),
+      body: const FullListView(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, "/addpets");
+          Navigator.pushNamed(context, '/addpets');
         },
         child: const Icon(Icons.add),
       ),

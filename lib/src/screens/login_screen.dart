@@ -4,6 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:provider/src/provider.dart';
+import 'package:watchpets/src/providers/auth_provider.dart';
 import 'package:watchpets/src/widgets/icon.dart';
 import 'package:watchpets/src/widgets/logo.dart';
 
@@ -21,17 +23,6 @@ String prettyPrint(Map json) {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  Future<UserCredential?> signInWithFacebook() async {
-    final LoginResult loginResult = await FacebookAuth.instance.login();
-
-    if (loginResult.status == LoginStatus.success) {
-      final OAuthCredential facebookAuthCredential =
-          FacebookAuthProvider.credential(loginResult.accessToken!.token);
-      return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
-    }
-    return null;
-  }
-
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -60,17 +51,12 @@ class _LoginScreenState extends State<LoginScreen> {
               Positioned(
                   left: greenSize * 0.30,
                   right: greenSize * 0.30,
-                  top: greenSize * 1.6,
+                  top: greenSize * 1.5,
                   child: ElevatedButton(
                     child: const Text('Login'),
                     onPressed: () {
-                      if (signInWithFacebook() != null) {
-                        Navigator.of(context)
-                            .pushNamedAndRemoveUntil("/home", (route) => false);
-                      } else {
-                        Navigator.of(context)
-                            .pushNamedAndRemoveUntil("/home", (route) => false);
-                      }
+                      Navigator.of(context)
+                          .pushNamedAndRemoveUntil("/home", (route) => false);
                     },
                   ))
             ],
