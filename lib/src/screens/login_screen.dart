@@ -27,6 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     final double greenSize = size.width * 0.80;
+    final firebaseUser = context.watch<AuthController>();
     return Scaffold(
       body: Container(
         width: size.width,
@@ -54,7 +55,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   top: greenSize * 1.5,
                   child: ElevatedButton(
                     child: const Text('Login'),
-                    onPressed: () {
+                    onPressed: () async {
+                      await firebaseUser.login();
                       Navigator.of(context)
                           .pushNamedAndRemoveUntil("/home", (route) => false);
                     },

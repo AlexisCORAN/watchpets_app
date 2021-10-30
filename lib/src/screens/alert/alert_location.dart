@@ -51,7 +51,7 @@ class _LocationUserState extends State<LocationUser> {
                 minWidth: 200.0,
                 height: 45.0,
                 color: Color(0xff4cc443),
-                shape: new RoundedRectangleBorder(
+                shape: RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(30.0)),
                 child: Text('Get current Location',
                     style: TextStyle(color: Colors.white)),

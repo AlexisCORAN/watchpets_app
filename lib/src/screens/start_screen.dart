@@ -11,10 +11,10 @@ class StartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var firebaseUser = context.watch<AuthController>().currentUser;
 
-    if (firebaseUser == null) {
-      return const LoginScreen();
-    } else {
+    if (firebaseUser != null) {
       return const HomeScreen();
+    } else {
+      return const LoginScreen();
     }
   }
 }

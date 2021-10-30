@@ -109,9 +109,11 @@ class _PetCardWidgetState extends State<PetCardWidget> {
                     ),
                   ],
                 )),
-                Expanded(
-                    child: Image.network(
-                        'https://thumbs.dreamstime.com/b/pets-standing-front-white-background-11785222.jpg')),
+                const Expanded(
+                  child: Image(
+                    image: AssetImage('assets/pets.jpg'),
+                  ),
+                )
               ],
             )));
   }

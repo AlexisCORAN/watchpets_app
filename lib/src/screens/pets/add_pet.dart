@@ -8,7 +8,19 @@ class AddPet extends StatefulWidget {
 }
 
 class _AddPetState extends State<AddPet> {
-  int sex = 1;
+  late int selectedRadio;
+
+  @override
+  void initState() {
+    selectedRadio = 0;
+    super.initState();
+  }
+
+  setSelectedRadio(int value) {
+    setState(() {
+      selectedRadio = value;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,12 +79,19 @@ class _AddPetState extends State<AddPet> {
                   Row(
                     children: [
                       const Text("Male"),
-                      Radio(value: 1, groupValue: sex, onChanged: (value) {}),
+                      Radio(
+                          value: 1,
+                          groupValue: selectedRadio,
+                          onChanged: (int? value) {
+                            setSelectedRadio(value!);
+                          }),
                       const Text("Female"),
                       Radio(
-                        value: 0,
-                        groupValue: sex,
-                        onChanged: (value) {},
+                        value: 2,
+                        groupValue: selectedRadio,
+                        onChanged: (int? value) {
+                          setSelectedRadio(value!);
+                        },
                       )
                     ],
                   ),

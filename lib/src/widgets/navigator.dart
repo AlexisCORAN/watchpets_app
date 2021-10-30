@@ -1,4 +1,3 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 import 'package:watchpets/src/providers/auth_provider.dart';
@@ -13,7 +12,7 @@ class FullNavigator extends StatefulWidget {
 class _FullNavigatorState extends State<FullNavigator> {
   @override
   Widget build(BuildContext context) {
-    final firebaseUser = context.read<AuthController>();
+    final firebaseUser = context.watch<AuthController>();
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
