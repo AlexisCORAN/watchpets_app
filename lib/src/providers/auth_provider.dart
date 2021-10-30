@@ -32,31 +32,3 @@ class AuthController with ChangeNotifier {
     notifyListeners();
   }
 }
-
-/**
-class AuthController {
-  FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-
-  AuthController(this._firebaseAuth);
-
-  Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
-
-  Future<UserCredential?> login() async {
-    final LoginResult? result = await FacebookAuth.instance.login();
-    UserCredential success;
-
-    if (result!.status == LoginStatus.success) {
-      final OAuthCredential credential =
-          FacebookAuthProvider.credential(result.accessToken!.token);
-      success = await _firebaseAuth.signInWithCredential(credential);
-      return success;
-    }
-    return null;
-  }
-
-  Future logout() async {
-    FacebookAuth.instance.logOut();
-    _firebaseAuth.signOut;
-  }
-}
-*/
