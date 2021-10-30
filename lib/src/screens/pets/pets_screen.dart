@@ -1,19 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:watchpets/src/providers/auth_provider.dart';
-import 'package:watchpets/src/providers/pet_provider.dart';
 import 'package:watchpets/src/widgets/list_view_pets.dart';
 
-class MyPets extends StatefulWidget {
-  const MyPets({
-    Key? key,
-  }) : super(key: key);
-  @override
-  _MyPetsState createState() => _MyPetsState();
-}
+class MyPets extends StatelessWidget {
+  const MyPets({Key? key}) : super(key: key);
 
-class _MyPetsState extends State<MyPets> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

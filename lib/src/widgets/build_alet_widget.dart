@@ -13,7 +13,7 @@ class _PetAlertWidgetState extends State<PetAlertWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: ListTile(
+      child: const ListTile(
         title: Text("Alert Tyrone"),
         subtitle: Text(" pet Name : Toby "),
       ),

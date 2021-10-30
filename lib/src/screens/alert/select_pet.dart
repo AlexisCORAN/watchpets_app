@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:watchpets/src/widgets/list_view_pets.dart';
 
-class SelectPet extends StatefulWidget {
+class SelectPet extends StatelessWidget {
   const SelectPet({Key? key}) : super(key: key);
 
-  @override
-  _SelectPetState createState() => _SelectPetState();
-}
-
-class _SelectPetState extends State<SelectPet> {
-  bool isCheked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

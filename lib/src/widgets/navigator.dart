@@ -3,7 +3,7 @@ import 'package:provider/src/provider.dart';
 import 'package:watchpets/src/providers/auth_provider.dart';
 
 class FullNavigator extends StatefulWidget {
-  FullNavigator({Key? key}) : super(key: key);
+  const FullNavigator({Key? key}) : super(key: key);
 
   @override
   _FullNavigatorState createState() => _FullNavigatorState();

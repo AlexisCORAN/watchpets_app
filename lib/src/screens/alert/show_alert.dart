@@ -7,7 +7,7 @@ class ShowAlert extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Show Alert"),
+        title: const Text("Show Alert"),
       ),
       body: const Center(
         child: Text("Show Alert"),

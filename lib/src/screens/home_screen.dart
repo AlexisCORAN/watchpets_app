@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/src/provider.dart';
-import 'package:watchpets/src/providers/auth_provider.dart';
 import 'package:watchpets/src/widgets/listt_tile_alert.dart';
 import 'package:watchpets/src/widgets/navigator.dart';
 
