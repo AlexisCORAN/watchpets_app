@@ -8,6 +8,7 @@ class AuthController with ChangeNotifier {
   AuthController(this._firebaseAuth);
 
   Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
+
   User? get currentUser => _firebaseAuth.currentUser;
 
   Future<UserCredential?> login() async {
@@ -27,10 +28,11 @@ class AuthController with ChangeNotifier {
 
   Future<void> logout() async {
     FacebookAuth.instance.logOut();
-    _firebaseAuth.signOut();
+    await _firebaseAuth.signOut();
     notifyListeners();
   }
 }
+
 /**
 class AuthController {
   FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
