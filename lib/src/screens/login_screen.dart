@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
@@ -13,13 +12,15 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
-String prettyPrint(Map json) {
-  JsonEncoder encoder = const JsonEncoder.withIndent('  ');
-  String pretty = encoder.convert(json);
-  return pretty;
-}
-
 class _LoginScreenState extends State<LoginScreen> {
+  bool _isPressed = false;
+
+  void _myCallback() {
+    setState(() {
+      _isPressed = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -53,9 +54,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: ElevatedButton(
                     child: const Text('Login'),
                     onPressed: () async {
-                      await firebaseUser.login();
-                      Navigator.of(context)
-                          .pushNamedAndRemoveUntil("/home", (route) => false);
+                      if ((await firebaseUser.login()) != null) {
+                        Navigator.of(context)
+                            .pushNamedAndRemoveUntil("/home", (route) => false);
+                      } else {
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                            "/login", (route) => false);
+                      }
                     },
                   ))
             ],

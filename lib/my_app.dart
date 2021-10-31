@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:watchpets/src/models/position_controller.dart';
+import 'package:watchpets/src/providers/position_controller.dart';
 import 'package:watchpets/src/providers/auth_provider.dart';
 import 'package:watchpets/src/screens/alert/confirm_time_alert.dart';
 import 'package:watchpets/src/screens/alert/alert_location.dart';

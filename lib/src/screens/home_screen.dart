@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:watchpets/src/widgets/listt_tile_alert.dart';
+import 'package:watchpets/src/widgets/list_tile_alert.dart';
 import 'package:watchpets/src/widgets/navigator.dart';
 
 class HomeScreen extends StatelessWidget {

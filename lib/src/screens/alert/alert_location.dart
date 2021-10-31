@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:location/location.dart';
 import 'package:provider/provider.dart';
-import 'package:watchpets/src/models/position_controller.dart';
+import 'package:watchpets/src/providers/position_controller.dart';
 
 class LocationUser extends StatefulWidget {
   const LocationUser({Key? key}) : super(key: key);
@@ -12,22 +11,6 @@ class LocationUser extends StatefulWidget {
 }
 
 class _LocationUserState extends State<LocationUser> {
-  LatLng _initialcameraposition = LatLng(0.0, 0.0);
-  late GoogleMapController _controller;
-  final Location _location = Location();
-
-  void _onMapCreated(GoogleMapController _cntlr) {
-    _controller = _cntlr;
-    _location.onLocationChanged.listen((l) {
-      _controller.animateCamera(
-        CameraUpdate.newCameraPosition(
-          CameraPosition(target: LatLng(l.latitude!, l.longitude!), zoom: 15),
-        ),
-      );
-    });
-  }
-
-  @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,8 +35,8 @@ class _LocationUserState extends State<LocationUser> {
                 height: 45.0,
                 color: Color(0xff4cc443),
                 shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(30.0)),
-                child: Text('Get current Location',
+                    borderRadius: BorderRadius.circular(30.0)),
+                child: const Text('Get current Location',
                     style: TextStyle(color: Colors.white)),
                 onPressed: () {
                   controller.getCurrentLocation();

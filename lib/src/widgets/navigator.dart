@@ -12,7 +12,7 @@ class FullNavigator extends StatefulWidget {
 class _FullNavigatorState extends State<FullNavigator> {
   @override
   Widget build(BuildContext context) {
-    final firebaseUser = context.watch<AuthController>();
+    final firebaseUser = context.read<AuthController>();
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -48,7 +48,7 @@ class _FullNavigatorState extends State<FullNavigator> {
             leading: const Icon(Icons.logout),
             title: const Text('Log out'),
             onTap: () async {
-              firebaseUser.logout().whenComplete(() {
+              await firebaseUser.logout().whenComplete(() {
                 Navigator.of(context)
                     .pushNamedAndRemoveUntil("/login", (route) => false);
               });
