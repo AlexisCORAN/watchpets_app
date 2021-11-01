@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:watchpets/src/widgets/build_alet_widget.dart';
+import 'package:watchpets/src/widgets/build_alert_widget.dart';
 
 class FullListTile extends StatefulWidget {
   const FullListTile({Key? key}) : super(key: key);
