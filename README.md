@@ -1,4 +1,4 @@
-![WatchPets logo](https://github.com/AlexisCORAN/watchpets_app/blob/development/README.md/ubicacion.png?raw=true)
+![WatchPets logo](https://github.com/AlexisCORAN/watchpets_app/blob/development/README.md/ubicacion.png)
 # watchpets
 ### *<Ultimate Track for ultimate results/>*
 MVP - Final project of the Holberton School Foundations program.
