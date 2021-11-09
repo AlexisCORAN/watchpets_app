@@ -1,5 +1,10 @@
+import 'dart:convert';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
+import 'package:uuid/uuid.dart';
+import 'package:watchpets/src/models/pets.dart';
 import 'package:watchpets/src/providers/auth_provider.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -10,12 +15,26 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  Future<void> getData() async {
+    var firestoreInstance = FirebaseFirestore.instance;
+    firestoreInstance.collection("pets").get().then((querySnapshot) {
+      querySnapshot.docs.forEach((result) {
+        print(result.data());
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final firebaseUser = context.read<AuthController>();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profile'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          getData();
+        },
       ),
       body: Center(
         child: Column(

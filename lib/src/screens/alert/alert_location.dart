@@ -19,8 +19,14 @@ class _LocationUserState extends State<LocationUser> {
     _controller = _contrll;
     _location.onLocationChanged.listen((event) {
       _contrll.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
-          zoom: 20.0, target: LatLng(event.latitude!, event.longitude!))));
+          zoom: 18.0, target: LatLng(event.latitude!, event.longitude!))));
     });
+  }
+
+  @override
+  void dispose() {
+    onMapCreated(_controller);
+    super.dispose();
   }
 
   @override
