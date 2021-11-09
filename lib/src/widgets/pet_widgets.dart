@@ -1,33 +1,5 @@
 import 'package:flutter/material.dart';
-
-class RichTextWidget extends StatelessWidget {
-  final String textBold;
-  final String addProperty;
-
-  const RichTextWidget({
-    Key? key,
-    required this.textBold,
-    required this.addProperty,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(3.0),
-      child: RichText(
-          text: TextSpan(
-              text: textBold,
-              style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.bold),
-              children: [
-            TextSpan(
-              text: addProperty,
-              style: DefaultTextStyle.of(context).style,
-            )
-          ])),
-    );
-  }
-}
+import 'package:watchpets/src/widgets/richtext_widget.dart';
 
 class PetCardWidget extends StatefulWidget {
   final String propertyName;
@@ -48,6 +20,8 @@ class PetCardWidget extends StatefulWidget {
 }
 
 class _PetCardWidgetState extends State<PetCardWidget> {
+  bool? check = false;
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -61,17 +35,32 @@ class _PetCardWidgetState extends State<PetCardWidget> {
               children: [
                 Expanded(
                     child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
                       padding: EdgeInsets.zero,
                       child: ListTile(
                         title: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            widget.propertyName,
-                            textAlign: TextAlign.center,
+                          padding: EdgeInsets.zero,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Checkbox(
+                                  value: check,
+                                  onChanged: (bool? value) {
+                                    setState(() {
+                                      check = value;
+                                    });
+                                  }),
+                              Expanded(
+                                child: Text(
+                                  widget.propertyName,
+                                  textAlign: TextAlign.center,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         subtitle: Column(
@@ -90,20 +79,13 @@ class _PetCardWidgetState extends State<PetCardWidget> {
                             ]),
                       ),
                     ),
-                    ButtonBar(
-                      buttonPadding: EdgeInsets.zero,
-                      alignment: MainAxisAlignment.start,
-                      children: [
-                        TextButton(onPressed: () {}, child: const Text('Edit')),
-                        TextButton(
-                            onPressed: () {}, child: const Text('Delete')),
-                      ],
-                    )
                   ],
                 )),
-                Expanded(
-                    child: Image.network(
-                        'https://thumbs.dreamstime.com/b/pets-standing-front-white-background-11785222.jpg')),
+                const Expanded(
+                  child: Image(
+                    image: AssetImage('assets/pets.jpg'),
+                  ),
+                )
               ],
             )));
   }

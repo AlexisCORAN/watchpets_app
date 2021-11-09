@@ -8,14 +8,18 @@ class SuccessAlert extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Expanded(child: Text('Thank you alert was sent succesfully')),
-            TextButton(
-                onPressed: () {
-                  Navigator.pushNamedAndRemoveUntil(
-                      context, '/home', (route) => false);
-                },
-                child: const Text('Home'))
+            const Text('Thank you alert was sent succesfully'),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextButton(
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, '/home', (route) => false);
+                  },
+                  child: const Text('Home')),
+            )
           ],
         ),
       ),
