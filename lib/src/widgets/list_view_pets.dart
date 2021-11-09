@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:watchpets/src/models/pets.dart';
 
-import 'build_pet_widgets.dart';
+import 'pet_widgets.dart';
 
 class FullListView extends StatefulWidget {
   const FullListView({Key? key}) : super(key: key);
