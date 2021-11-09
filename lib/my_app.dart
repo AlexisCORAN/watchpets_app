@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
             create: (_) => AuthController(FirebaseAuth.instance)),
         StreamProvider(
             catchError: (_, err) {
-              print(err);
               return null;
             },
             create: (context) =>
