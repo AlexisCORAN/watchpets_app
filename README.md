@@ -24,7 +24,7 @@ The view of the user's profile, will allow you to see details of the username wi
 * Quick access to detailed information about your pets, which you can use to send the alert much faster.
 * You can easily log into the application with your Facebook account, and forget about creating a new record.
 
-## contributions to the app for members
+## Contributions to the app for members
 
 Click [here](https://pgomezboza.github.io/) to go the landing page.
 
@@ -36,4 +36,4 @@ Click [here](https://www.linkedin.com/posts/alexis-coran_hello-everyone-i-am-sha
 
 - Alexis Coronado [Github](https://github.com/AlexisCORAN), [Linkedin](https://www.linkedin.com/in/alexis-coran/)
 - Manuel Condori [Github](https://github.com/Manuel-condori), [Linkedin](https://www.linkedin.com/in/mcondori28/)
-- Piero Gomez [Github](https://github.com/pgomezboza), [Github](https://www.linkedin.com/in/pierogomez/)
+- Piero Gomez [Github](https://github.com/pgomezboza), [Linkedin](https://www.linkedin.com/in/pierogomez/)
