@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ShowAlert extends StatelessWidget {
+  /// The ShowAlert widget show all information about an alert of a pet lost.
+
   const ShowAlert({Key? key}) : super(key: key);
 
   @override

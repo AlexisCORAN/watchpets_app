@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AddPet extends StatefulWidget {
+
+  /// The AddPet widget is a form for add a pet of the user.
+
   const AddPet({Key? key}) : super(key: key);
 
   @override

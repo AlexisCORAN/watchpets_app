@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class SuccessAlert extends StatelessWidget {
+
+  /// The SuccessAlert widget is a final step of an alert.
+  /// 
+  /// This widget is the confirmation about the correct sending of an alert.
+
   const SuccessAlert({Key? key}) : super(key: key);
 
   @override

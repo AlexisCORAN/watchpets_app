@@ -1,5 +1,3 @@
-
-
 /**
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,12 +8,17 @@ class PetController with ChangeNotifier {
   Pet pet;
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
+  final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;}
+  final List<Pet> = [];
+
+  PetController() {
+    this.fetchPetData();
+  }
 
   Future fetchPetData() async {
     final userId = _firebaseAuth.currentUser.uid;
     final docs = await _firebaseFirestore.doc('pets/$userId').get();
-    this.pet = Pet
   }
 }
+
 */

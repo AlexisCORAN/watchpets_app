@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ConfirmTimeAlert extends StatefulWidget {
+  /// The ConfirmTimeAlert widget is the third step about the send of an alert.
+  ///
+  /// Show the local time with a small description of a lost pet.
+
   const ConfirmTimeAlert({Key? key}) : super(key: key);
 
   @override

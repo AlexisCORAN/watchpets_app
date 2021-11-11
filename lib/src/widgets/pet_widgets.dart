@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:watchpets/src/widgets/richtext_widget.dart';
 
 class PetCardWidget extends StatefulWidget {
+  /// The PetCardWidget show information aobut a pet of the user.
+  /// And required parameters like propertyName, propertyType,
+  /// propertyBreed, propertyAge.
+
   final String propertyName;
   final String propertyType;
   final String propertyBreed;

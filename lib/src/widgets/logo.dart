@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Logo extends StatelessWidget {
+  /// The Logo widget provides the name of the application in the widget LoginScreen.
   const Logo({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {

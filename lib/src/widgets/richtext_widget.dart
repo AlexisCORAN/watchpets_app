@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class RichTextWidget extends StatelessWidget {
+  /// The RichTextWidget widget displays a font-weight of a feature with it's
+  /// respective value.
+  ///
+  /// Requires parameters like textBold and addProperty.
+
   final String textBold;
   final String addProperty;
 

@@ -3,6 +3,9 @@ import 'package:provider/src/provider.dart';
 import 'package:watchpets/src/providers/auth_provider.dart';
 
 class FullNavigator extends StatefulWidget {
+  /// The FullNavigator widget provides a collection of widgets that
+  /// us to go to the application screens.
+  /// And show information about the user.
   const FullNavigator({Key? key}) : super(key: key);
 
   @override

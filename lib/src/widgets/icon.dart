@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class IconLogo extends StatelessWidget {
+  /// The widget IconLogo provides the logo in the widget LoginScreen.
   const IconLogo({Key? key}) : super(key: key);
 
   @override

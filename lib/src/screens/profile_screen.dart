@@ -1,13 +1,12 @@
-import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
-import 'package:uuid/uuid.dart';
-import 'package:watchpets/src/models/pets.dart';
 import 'package:watchpets/src/providers/auth_provider.dart';
 
 class ProfileScreen extends StatefulWidget {
+  /// The ProfileScreen widget provides  information about the user
+  /// such as their name , surname and email.
+
   const ProfileScreen({Key? key}) : super(key: key);
 
   @override

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SummaryAlert extends StatefulWidget {
+  /// The SummaryAlert widget is the Fourth screen about the send of an alert.
+  ///
+  ///Show a summary about the alert.
   const SummaryAlert({Key? key}) : super(key: key);
 
   @override

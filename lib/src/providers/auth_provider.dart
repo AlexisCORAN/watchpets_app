@@ -3,6 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
 class AuthController with ChangeNotifier {
+  /// The class AuthController validates the login with facebook and validates the auth Firebase,
+  ///
+  /// Also, the logout with facebook and Auth Firebase.
+
   FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   AuthController(this._firebaseAuth);

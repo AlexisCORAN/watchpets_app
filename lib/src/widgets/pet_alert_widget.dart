@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PetAlertWidget extends StatefulWidget {
+  /// The PetAlertWidget widget show the information about the alert of a pet lost.
   const PetAlertWidget({
     Key? key,
   }) : super(key: key);

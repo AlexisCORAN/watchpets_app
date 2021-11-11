@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:watchpets/src/widgets/pet_alert_widget.dart';
 
 class FullListTile extends StatefulWidget {
+  /// The widget FullListTile provides the collection of widgets that show
+  /// information about a pet's alert
   const FullListTile({Key? key}) : super(key: key);
 
   @override

@@ -6,6 +6,10 @@ import 'package:watchpets/src/widgets/icon.dart';
 import 'package:watchpets/src/widgets/logo.dart';
 
 class LoginScreen extends StatefulWidget {
+  /// THe LoginScreen widget show the application logo widget , the application name widget
+  ///
+  /// And the widget to login with facebook and authenticate with firebase to start the application.
+
   const LoginScreen({Key? key}) : super(key: key);
 
   @override

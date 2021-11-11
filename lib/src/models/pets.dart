@@ -2,6 +2,8 @@ import 'package:uuid/uuid.dart';
 import 'dart:convert';
 
 class Pet {
+  /// The class Pet is the information about a Pet.
+
   final String petId = Uuid().v1();
   String petName, petType, petBreed;
   int petAge;

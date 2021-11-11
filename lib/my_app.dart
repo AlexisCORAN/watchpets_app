@@ -17,6 +17,12 @@ import 'src/screens/pets/pets_screen.dart';
 import 'src/screens/profile_screen.dart';
 
 class MyApp extends StatelessWidget {
+  /// The widget MyApp is the is the root widget of the application provides the application paths
+  ///
+  /// PositionController - is an instance of the user's position.
+  ///
+  /// AuthController - is a instance of the user's authentication.
+
   const MyApp({Key? key}) : super(key: key);
 
   @override

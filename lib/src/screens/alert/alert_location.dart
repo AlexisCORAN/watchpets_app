@@ -5,6 +5,9 @@ import 'package:provider/provider.dart';
 import 'package:watchpets/src/providers/position_controller.dart';
 
 class LocationUser extends StatefulWidget {
+  /// The LocationUser widget is the second step for send a alert.
+  ///
+  /// Show the location of a user through google maps.
   const LocationUser({Key? key}) : super(key: key);
 
   @override
@@ -55,34 +58,3 @@ class _LocationUserState extends State<LocationUser> {
     );
   }
 }
-
-/**
- * Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(controller.locationMessage),
-              MaterialButton(
-                minWidth: 200.0,
-                height: 45.0,
-                color: Color(0xff4cc443),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0)),
-                child: const Text('Get current Location',
-                    style: TextStyle(color: Colors.white)),
-                onPressed: () {
-                  controller.getCurrentLocation();
-                },
-              ),
-              Container(
-                margin: const EdgeInsets.all(16.0),
-                height: 350.0,
-                width: 300.0,
-                child: GoogleMap(
-                  myLocationEnabled: true,
-                  initialCameraPosition: CameraPosition(
-                      zoom: 18.0, target: LatLng(-11.9911438, -77.115302)),
-                ),
-              )
-            ],
- */

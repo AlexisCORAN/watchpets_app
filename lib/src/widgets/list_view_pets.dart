@@ -4,6 +4,9 @@ import 'package:watchpets/src/models/pets.dart';
 import 'pet_widgets.dart';
 
 class FullListView extends StatefulWidget {
+  /// The FullListView widget provides a collection of widgets
+  /// that show a characteristics
+  /// about a pet.
   const FullListView({Key? key}) : super(key: key);
 
   @override
