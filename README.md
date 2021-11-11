@@ -1,4 +1,5 @@
-![WatchPets logo](../main/assets/ubicacion.png)
+<div align="center"> <img src="assets/ubicacion.png" alt="Flow to play"> </div>
+
 # watchpets
 ### *<Ultimate Track for ultimate results/>*
 MVP - Final project of the Holberton School Foundations program.
