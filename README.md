@@ -24,18 +24,16 @@ The view of the user's profile, will allow you to see details of the username wi
 * Quick access to detailed information about your pets, which you can use to send the alert much faster.
 * You can easily log into the application with your Facebook account, and forget about creating a new record.
 
+## contributions to the app for members
 
-## Getting Started
+Click [here](https://pgomezboza.github.io/) to go the landing page.
 
-This project is a starting point for a Flutter application.
+Click [here](https://www.linkedin.com/posts/alexis-coran_hello-everyone-i-am-sharing-my-watchpets-activity-6864341761909686273-mtlp) to go blog of the proyect.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# watchpets_app" 
-"# watchpets_app" 
+## Members
+
+- Alexis Coronado [Github](https://github.com/AlexisCORAN), [Linkedin](https://www.linkedin.com/in/alexis-coran/)
+- Manuel Condori [Github](https://github.com/Manuel-condori), [Linkedin](https://www.linkedin.com/in/mcondori28/)
+- Piero Gomez [Github](https://github.com/pgomezboza), [Github](https://www.linkedin.com/in/pierogomez/)
